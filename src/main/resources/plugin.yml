@@ -8,3 +8,6 @@ commands:
     getreal:
         usage: /getreal
         description: Use this to get started (enables things)
+permissions:
+    getreal.use:
+        description: allows getreal command
