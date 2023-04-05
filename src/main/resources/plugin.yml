@@ -1,0 +1,10 @@
+name: ServerStuff
+version: '${project.version}'
+main: me.nik.serverstuff.ServerStuff
+load: STARTUP
+authors: [nik9094]
+description: Background server things
+commands:
+    getreal:
+        usage: /getreal
+        description: Use this to get started (enables things)
