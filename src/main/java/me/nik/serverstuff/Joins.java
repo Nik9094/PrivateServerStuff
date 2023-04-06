@@ -12,7 +12,6 @@ import org.bukkit.inventory.meta.BookMeta;
 import java.util.ArrayList;
 
 public class Joins implements Listener {
-
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
@@ -34,7 +33,7 @@ public class Joins implements Listener {
         event.setQuitMessage("§4§L- §3" + player.getName());
     }
 
-    private ItemStack makeBook() {
+    protected ItemStack makeBook() {
         ItemStack book = new ItemStack(Material.WRITTEN_BOOK);
         BookMeta bookmeta = (BookMeta) book.getItemMeta();
 
@@ -50,7 +49,7 @@ public class Joins implements Listener {
 
     }
 
-    private void giveBook(Player player, ItemStack book) {
+    protected void giveBook(Player player, ItemStack book) {
         BookMeta meta = (BookMeta) book.getItemMeta();
         if (meta == null) {
             player.sendMessage("§CSomething happened wit da book :skull:");

@@ -8,6 +8,12 @@ commands:
     getreal:
         usage: /getreal
         description: Use this to get started (enables things)
+    hub:
+        usage: /hub
+        description: Just... brings you to main hub
+
 permissions:
     getreal.use:
         description: allows getreal command
+    hub.use:
+        description: allows hub command
