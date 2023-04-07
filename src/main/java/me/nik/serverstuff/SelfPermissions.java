@@ -12,7 +12,7 @@ public class SelfPermissions implements CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             if (player.hasPermission("getreal.use")) {
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + player.getName() + " parent add player");
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + player.getName() + " parent add player");    //Todo: use luckperms API instead
                 player.sendMessage("§AYou now have all necessary permissions to play!");
             } else
                 player.sendMessage("§CMissing permission getreal.use!");
