@@ -13,6 +13,7 @@ public final class ServerStuff extends JavaPlugin {
         manager.registerEvents(new Joins(), this);
         getCommand("getreal").setExecutor(new SelfPermissions());
         getCommand("hub").setExecutor(new hubCommand());
+        getCommand("fly").setExecutor(new flyPerms());
     }
 
     @Override
