@@ -1,4 +1,4 @@
-package me.nik.serverstuff;
+package me.nik.serverstuff.Commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;

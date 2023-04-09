@@ -1,4 +1,4 @@
-package me.nik.serverstuff;
+package me.nik.serverstuff.Listeners;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -34,7 +34,7 @@ public class Joins implements Listener {
         event.setQuitMessage("§4§L- §3" + player.getName());
     }
 
-    protected ItemStack makeBook() {
+    public ItemStack makeBook() {
         ItemStack book = new ItemStack(Material.WRITTEN_BOOK);
         BookMeta bookmeta = (BookMeta) book.getItemMeta();
 
@@ -52,7 +52,7 @@ public class Joins implements Listener {
 
     }
 
-    protected void giveBook(Player player, ItemStack book) {
+    public void giveBook(Player player, ItemStack book) {
         BookMeta meta = (BookMeta) book.getItemMeta();
         if (meta == null) {
             player.sendMessage("§CSomething happened wit da book :skull:");
