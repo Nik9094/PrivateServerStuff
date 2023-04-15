@@ -1,8 +1,9 @@
 package me.nik.serverstuff;
 
 import me.nik.serverstuff.Commands.SelfPermissions;
-import me.nik.serverstuff.Commands.fly;
-import me.nik.serverstuff.Commands.hub;
+import me.nik.serverstuff.Commands.Fly;
+import me.nik.serverstuff.Commands.Hub;
+import me.nik.serverstuff.Commands.Restarter;
 import me.nik.serverstuff.Listeners.Joins;
 import me.nik.serverstuff.Listeners.Signs;
 import me.nik.serverstuff.Worlds.WorldLoader;
@@ -18,8 +19,6 @@ public final class ServerStuff extends JavaPlugin {
     public void onEnable() {
         getLogger().info("Enabling server background stuff.");
 
-
-
         getConfig().options().copyDefaults(true);
         saveConfig();
         loader.loadFromConfig();
@@ -28,8 +27,9 @@ public final class ServerStuff extends JavaPlugin {
         manager.registerEvents(new Signs(), this);
 
         getCommand("getreal").setExecutor(new SelfPermissions());
-        getCommand("hub").setExecutor(new hub());
-        getCommand("fly").setExecutor(new fly());
+        getCommand("hub").setExecutor(new Hub());
+        getCommand("fly").setExecutor(new Fly());
+        getCommand("restarter").setExecutor(new Restarter(this));
 
     }
 
