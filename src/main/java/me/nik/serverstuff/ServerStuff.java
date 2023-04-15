@@ -5,20 +5,24 @@ import me.nik.serverstuff.Commands.fly;
 import me.nik.serverstuff.Commands.hub;
 import me.nik.serverstuff.Listeners.Joins;
 import me.nik.serverstuff.Listeners.Signs;
-import me.nik.serverstuff.Locations.LoadLocations;
+import me.nik.serverstuff.Worlds.WorldLoader;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class ServerStuff extends JavaPlugin {
 
     PluginManager manager = getServer().getPluginManager();
-    LoadLocations spawns = new LoadLocations();
+    WorldLoader loader = new WorldLoader(this);
 
     @Override
     public void onEnable() {
         getLogger().info("Enabling server background stuff.");
 
-        spawns.setLocations();                                              // Load all map spawns in a HashMap, to access in Signs
+
+
+        getConfig().options().copyDefaults(true);
+        saveConfig();
+        loader.loadFromConfig();
 
         manager.registerEvents(new Joins(), this);
         manager.registerEvents(new Signs(), this);
@@ -31,6 +35,7 @@ public final class ServerStuff extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        saveConfig();
         getLogger().info("Disabling server background stuff.");
     }
 }

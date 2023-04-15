@@ -1,6 +1,7 @@
 name: ServerStuff
 version: '${project.version}'
 main: me.nik.serverstuff.ServerStuff
+softdepend: ['Multiverse-Core']
 authors: [nik9094]
 description: Background server things
 commands:

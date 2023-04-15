@@ -1,5 +1,7 @@
 package me.nik.serverstuff.Listeners;
 
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,14 +14,15 @@ import org.bukkit.inventory.meta.BookMeta;
 import java.util.ArrayList;
 
 public class Joins implements Listener {
+
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         String playerName = player.getName();
 
-        event.setJoinMessage("§2§L+ §3" + playerName);
+        event.setJoinMessage("§2§L+§3 " + playerName);
+        player.teleport(new Location(Bukkit.getServer().getWorld("Hub"), 81.5, 15.0, 41.5, -90, 0));
 
-        player.setCollidable(false);
         if (!player.hasPlayedBefore())
             player.sendMessage("§A§LWelcome§F " + playerName + "! §cFor the love of God read the book I've just given you.");
         else
@@ -31,7 +34,7 @@ public class Joins implements Listener {
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent event) {
         Player player = event.getPlayer();
-        event.setQuitMessage("§4§L- §3" + player.getName());
+        event.setQuitMessage("§4§L-§3 " + player.getName());
     }
 
     public ItemStack makeBook() {
@@ -42,7 +45,7 @@ public class Joins implements Listener {
         bookmeta.setTitle("§7§L｜｜｜ §BInfo & credits §7§L｜｜｜");
 
         ArrayList<String> pages = new ArrayList<>();
-        pages.add(0, "§2§L      :SETUP:      \n" + "§ARun the command\n§A§L/getreal\n§Ato start off.\n§0(necessary only on first login)\n\n" + "§AShould be all you need! §0Remember you can toggle flight on and off using §L/fly");
+        pages.add(0, "§2§L    :START OFF:   \n" + "§A§L/getreal§0: lets you join and play maps.\n(necessary only on first login)\n" + "§A§L/start <mapname>§0: begin a map run\n\n" + "§A§L/refresh§0: get the reset/visibility dyes\n\n" + "§A§L/hub§0: teleport back to hub");
         pages.add(1, "§5§L      :RULES:      \n" + "§41. §0Just don't crash this server or use exploits please, be thankful it's free for you.\n\n" + "§42. §0Only ask me to change maps. Anything else isn't worth it unless vital.");
         pages.add(2, "§3§L      :OTHER:      \n" + "§91. §0Some leaves, ice, vines etc. might be missing.\nIf you see any that are necessary to a map run, LMK.\n\n" + "§92. §0If something doesn't work properly, LMK.");
         pages.add(3, "§6§L     :CREDITS:     \n" + "§8Strafes: §0Gargant\n" + "§8Timer: §0HowToGHP\n" + "§8Maps:\n- §0skyphonics1666\n§8- §0KaZPro (School)\n" + "§8Everything else: §0me lol donations are welcome\n\n" + "§D§OENJOY!");
