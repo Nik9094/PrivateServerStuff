@@ -26,7 +26,7 @@ public class Joins implements Listener {
         if (!player.hasPlayedBefore())
             player.sendMessage("§A§LWelcome§F " + playerName + "! §cFor the love of God read the book I've just given you.");
         else
-            player.sendMessage("§A§LWelcome back!");
+            player.sendMessage("§A§LWelcome back! §cRemember to read the book.");
 
         giveBook(player, makeBook());
     }
@@ -45,9 +45,9 @@ public class Joins implements Listener {
         bookmeta.setTitle("§7§L｜｜｜ §BInfo & credits §7§L｜｜｜");
 
         ArrayList<String> pages = new ArrayList<>();
-        pages.add(0, "§2§L    :START OFF:   \n" + "§A§L/getreal§0: lets you join and play maps.\n(necessary only on first login)\n" + "§A§L/start <mapname>§0: begin a map run\n\n" + "§A§L/refresh§0: get the reset/visibility dyes\n\n" + "§A§L/hub§0: teleport back to hub");
+        pages.add(0, "§2§L    :START OFF:   \n" + "§A§L/getreal§0: lets you join and play maps.\n(only run this once, you'll never need it again)\n" + "§A§L/start <mapname>§0: begin a map run\n\n" + "§A§L/refresh§0: get the reset/visibility dyes\n\n" + "§A§L/hub§0: teleport back to hub");
         pages.add(1, "§5§L      :RULES:      \n" + "§41. §0Just don't crash this server or use exploits please, be thankful it's free for you.\n\n" + "§42. §0Only ask me to change maps. Anything else isn't worth it unless vital.");
-        pages.add(2, "§3§L      :OTHER:      \n" + "§91. §0Some leaves, ice, vines etc. might be missing.\nIf you see any that are necessary to a map run, LMK.\n\n" + "§92. §0If something doesn't work properly, LMK.");
+        pages.add(2, "§3§L      :OTHER:      \n" + "§91. §0Use §A§L/pbs §0to view PBs.\n   Use §A§L/pbs reset <mapname> §0to reset a PB.\n\n" + "§92. §0If something doesn't work properly, LMK.");
         pages.add(3, "§6§L     :CREDITS:     \n" + "§8Strafes: §0Gargant\n" + "§8Timer: §0HowToGHP\n" + "§8Maps:\n- §0skyphonics1666\n§8- §0KaZPro (School)\n" + "§8Everything else: §0me lol donations are welcome\n\n" + "§D§OENJOY!");
         bookmeta.setPages(pages);
         book.setItemMeta(bookmeta);

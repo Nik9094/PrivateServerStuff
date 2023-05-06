@@ -11,13 +11,19 @@ commands:
     hub:
         usage: /hub
         description: Just... brings you to main hub
+        aliases:
+            - lobby
     fly:
         usage: /fly
         description: Toggles flight on and off
     restarter:
         usage: /restarter
         description: CONSOLE-ONLY COMMAND
-
+    maintenance:
+        usage: /maintenance
+        description: CONSOLE-ONLY COMMAND
+        aliases:
+            /maint
 permissions:
     getreal.use:
         description: allows getreal command

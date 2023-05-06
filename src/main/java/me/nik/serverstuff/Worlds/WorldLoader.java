@@ -19,9 +19,9 @@ public class WorldLoader {
         for (String worldName : plugin.getConfig().getKeys(false)) {
             if (plugin.getConfig().get(worldName).equals(true)) {
                 worldManager.loadWorld(worldName);
-                plugin.getLogger().info("Loaded " + worldName);
+                plugin.getLogger().info("§cLoaded " + worldName);
             } else {
-                plugin.getLogger().info("!!!!!!!!!!Don't load this one: " + worldName);
+                plugin.getLogger().info("§6Don't load this one: " + worldName);
             }
         }
     }

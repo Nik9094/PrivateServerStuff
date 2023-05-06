@@ -30,6 +30,7 @@ public final class ServerStuff extends JavaPlugin {
         getCommand("hub").setExecutor(new Hub());
         getCommand("fly").setExecutor(new Fly());
         getCommand("restarter").setExecutor(new Restarter(this));
+        getCommand("maintenance").setExecutor(new Maintenance(this));
 
     }
 
